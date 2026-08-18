@@ -33,5 +33,5 @@ func TestWafPolicyModule(t *testing.T) {
 		SetTestConfigFileName(infraTFVarFileNameDefault).
 		Build()
 
-	lib.RunSetupTestTeardown(t, *ctx, testimpl.TestWafPolicyComplete)
+	lib.RunSetupTestTeardown(t, *ctx, testimpl.TestComposableWafPolicyComplete)
 }
