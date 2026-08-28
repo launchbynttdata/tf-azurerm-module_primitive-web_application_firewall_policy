@@ -30,9 +30,9 @@ func TestComposableWafPolicyComplete(t *testing.T, ctx types.TestContext) {
 }
 
 func checkWafPolicyID(t *testing.T, ctx types.TestContext, subscriptionId string, cred *azidentity.DefaultAzureCredential) {
-	resourceGroupName := terraform.Output(t, ctx.TerratestTerraformOptions(), "resource_group_name")
-	wafPolicyID := terraform.Output(t, ctx.TerratestTerraformOptions(), "waf_policy_id")
-	wafPolicyName := terraform.Output(t, ctx.TerratestTerraformOptions(), "waf_policy_name")
+	resourceGroupName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "resource_group_name")
+	wafPolicyID := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "waf_policy_id")
+	wafPolicyName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "waf_policy_name")
 
 	client := NewWafPoliciesClient(t, subscriptionId, cred)
 
